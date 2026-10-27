@@ -1,0 +1,76 @@
+REPORT ZKN_PO_OPEN_LIST.
+INCLUDE ZKN_PO_OPEN_LIST_DEF.
+INCLUDE ZKN_PO_OPEN_LIST_TOP.
+INCLUDE ZKN_PO_OPEN_LIST_SEL.
+INCLUDE ZKN_PO_OPEN_LIST_IMPL.
+
+START-OF-SELECTION.
+CALL METHOD lcl_po_reader=>get_open_pos.
+CALL METHOD lcl_po_reader=>display_open_pos.
+
+*&---------------------------------------------------------------------*
+*& Include          ZKN_PO_OPEN_LIST_DEF
+*&---------------------------------------------------------------------*
+CLASS lcl_po_reader DEFINITION.
+  PUBLIC SECTION.
+  CLASS-METHODS: get_open_pos,
+                 display_open_pos.
+  ENDCLASS.
+
+*&---------------------------------------------------------------------*
+*& Include          ZKN_PO_OPEN_LIST_TOP
+*&---------------------------------------------------------------------*
+TYPES : BEGIN OF ty_data,
+          ebeln TYPE ekko-ebeln,
+          lifnr TYPE ekko-lifnr,
+          bedat TYPE ekko-bedat,
+          ebelp TYPE ekpo-ebelp,
+          matnr TYPE ekpo-matnr,
+          menge TYPE ekpo-menge,
+        END OF ty_data.
+DATA: lo_alv TYPE REF TO cl_salv_table,
+      lt_po TYPE TABLE OF ty_data,
+      gv_lifnr TYPE ekko-lifnr,
+      gv_bedat TYPE ekko-bedat.
+
+
+*&---------------------------------------------------------------------*
+*& Include          ZKN_PO_OPEN_LIST_SEL
+*&---------------------------------------------------------------------*
+SELECTION-SCREEN BEGIN OF BLOCK b1 WITH FRAME TITLE TEXT-001.
+  SELECT-OPTIONS: s_lifnr FOR gv_lifnr,
+                  s_bedat FOR gv_bedat.
+SELECTION-SCREEN END OF BLOCK b1.
+
+*&---------------------------------------------------------------------*
+*& Include          ZKN_PO_OPEN_LIST_IMPL
+*&---------------------------------------------------------------------*
+CLASS lcl_po_reader IMPLEMENTATION.
+  METHOD get_open_pos.
+    SELECT k~ebeln,
+           k~lifnr,
+           k~bedat,
+           p~ebelp,
+           p~matnr,
+           p~menge FROM ekko AS k
+           INNER JOIN ekpo AS p ON p~ebeln = k~ebeln
+           WHERE k~lifnr IN @s_lifnr
+           AND k~bedat IN @s_bedat
+           INTO TABLE @lt_po.
+  ENDMETHOD.
+  METHOD display_open_pos.
+    TRY.
+        CALL METHOD cl_salv_table=>factory
+*      EXPORTING
+*        list_display   = IF_SALV_C_BOOL_SAP=>FALSE
+*        r_container    =
+*        container_name =
+          IMPORTING
+            r_salv_table = lo_alv
+          CHANGING
+            t_table      = lt_po.
+      CATCH cx_salv_msg.
+    ENDTRY.
+    CALL METHOD lo_alv->if_salv_gui_om_table_action~display.
+  ENDMETHOD.
+ENDCLASS.
