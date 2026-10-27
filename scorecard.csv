@@ -1,0 +1,497 @@
+No,Questions,Chat GPT,Gemini,Claude
+1,Which SAP transaction code is used to create a purchase order?,"The SAP transaction code to create a Purchase Order (PO) is ME21N.
+- ME21N – Create Purchase Order
+- ME22N – Change Purchase Order
+- ME23N – Display Purchase Order
+Example: Enter ME21N in the SAP command field and press Enter to create a new purchase order.",The SAP transaction code used to create a purchase order is **ME21N**.,"The transaction code is **ME21N** (Create Purchase Order). It's the current, enhanced version in SAP ECC and S/4HANA.
+
+Related codes you may run into:
+
+- **ME22N**: Change purchase order
+- **ME23N**: Display purchase order
+- **ME21**: The older, legacy create transaction (obsolete, but still found in some systems)
+- **ME59N**: Automatically create purchase orders from purchase requisitions
+
+If you're working from a purchase requisition, the usual flow is to create the requisition in ME51N, then convert it to a PO from within ME21N or via ME59N."
+2,Which T-code is used to display a purchase order?,"The SAP transaction code to display a Purchase Order (PO) is ME23N.
+- ME21N – Create Purchase Order
+- ME22N – Change Purchase Order
+- ME23N – Display Purchase Order",The SAP transaction code used to display a purchase order is **ME23N**.,"The transaction code is **ME23N** (Display Purchase Order).
+
+If you need to look at purchase orders in bulk rather than one at a time, **ME2M** (by material), **ME2L** (by vendor), and **ME2N** (by PO number) give you list-style reports."
+3,Which T-code is used to create a purchase requisition?,"The SAP transaction code to create a Purchase Requisition (PR) is ME51N.
+- ME51N – Create Purchase Requisition
+- ME52N – Change Purchase Requisition
+- ME53N – Display Purchase Requisition",The SAP transaction code used to create a purchase requisition is **ME51N**.,"The transaction code is **ME51N** (Create Purchase Requisition).
+
+Related codes:
+
+- **ME52N**: Change purchase requisition
+- **ME53N**: Display purchase requisition
+- **ME5A**: List display of purchase requisitions
+- **ME54N**: Release (approve) a purchase requisition, if release strategy is configured"
+4,Which T-code is used to execute an ABAP report?,"The SAP transaction code to execute an ABAP report is `SA38`.
+
+- SA38 – Execute an ABAP report.
+- SE38 – Create, edit, and execute ABAP reports.
+
+Example: Enter `SA38`, type the ABAP program name, and click Execute (F8).","The SAP transaction code used to execute an ABAP report is **SA38** (or **SE38**).
+
+*(Note: **SA38** is specifically used for executing programs without modification access, whereas **SE38** is the ABAP Editor which allows you to both view/edit source code and execute it).*","The transaction code is **SA38** (ABAP Reports). You enter the program name and run it directly.
+
+Related codes:
+
+- **SE38**: ABAP Editor, where you can also execute a program (F8), but it's mainly for editing and developing code
+- **SE80**: Object Navigator, a broader development workbench that includes program execution
+- **SM36 / SM37**: Schedule and monitor background jobs, for running reports in the background
+
+For end users, SA38 is the standard choice, since SE38 requires developer-level authorizations."
+5,Which T-code is used to display the ABAP Data Dictionary?,"The SAP transaction code to access and display the ABAP Data Dictionary is `SE11`.
+
+\- SE11 – ABAP Data Dictionary (DDIC); create, change, and display tables, views, data elements, domains, and structures.",The SAP transaction code used to display the ABAP Data Dictionary is **SE11**.,"The transaction code is **SE11** (ABAP Dictionary). It lets you display, create, and change tables, views, data elements, domains, structures, and other dictionary objects.
+
+Related codes:
+
+- **SE12**: Dictionary display only (older, restricted version of SE11)
+- **SE16 / SE16N**: Data Browser, to view the actual contents of tables
+- **SE17**: General table display
+- **SE14**: Database utility, for adjusting or activating the underlying database tables"
+6,Which SAP tables store purchase order header data and item data?,"In SAP, purchase order data is stored in these two main tables:
+
+- `EKKO` – Stores Purchase Order header data, such as PO number, vendor, purchasing organization, and document date.
+- `EKPO` – Stores Purchase Order item data, such as material number, plant, quantity, and net price.
+
+Remember: `EKKO` = Header, `EKPO` = Items.","The SAP tables that store purchase order data are:
+
+* **EKKO** (Purchasing Document Header): Stores header-level information such as the vendor, purchasing organization, company code, document date, and payment terms.
+* **EKPO** (Purchasing Document Item): Stores line-item level details such as the material number, order quantity, delivery date, net price, and plant.","Purchase order data is stored in two main tables:
+
+- **EKKO**: Purchase order header data (PO number, company code, vendor, document type, creation date, currency, purchasing organization and group)
+- **EKPO**: Purchase order item data (item number, material, quantity, net price, plant, storage location, delivery details)
+
+They are linked by the PO number field **EBELN**. Items in EKPO are identified by EBELN plus the item number **EBELP**.
+
+Related tables you'll often join with them:
+
+- **EKET**: Scheduling lines (delivery dates and quantities per item)
+- **EKKN**: Account assignment data per item
+- **EKBE**: Purchase order history (goods receipts, invoice receipts)
+- **EKBZ**: PO history for delivery costs
+- **EBAN**: Purchase requisitions, the upstream document
+
+You can browse any of these with SE16 or SE16N."
+7,Which tables store sales order header data and item data?,"In SAP, sales order data is stored in these two main tables:
+
+- `VBAK` – Stores Sales Order header data, such as sales order number, customer, sales organization, and document date.
+- `VBAP` – Stores Sales Order item data, such as material number, order quantity, plant, and net value.
+
+Remember: `VBAK` = Header, `VBAP` = Items.","The SAP tables that store sales order data are:
+
+* **VBAK** (Sales Document: Header Data): Stores header-level information such as the sales document number, creation date, sold-to party, sales organization, distribution channel, and overall document status.
+* **VBAP** (Sales Document: Item Data): Stores line-item level details such as the material number, order quantity, item category, net price, plant, and delivery status.","Sales order data is stored in two main tables:
+
+- **VBAK**: Sales document header data (sales document number, document type, sales organization, distribution channel, division, sold-to party, creation date, net value, currency)
+- **VBAP**: Sales document item data (item number, material, order quantity, plant, net price, item category, unit of measure)
+
+They are linked by the sales document number **VBELN**. Items in VBAP are identified by VBELN plus the item number **POSNR**.
+
+Related tables you'll often join with them:
+
+- **VBEP**: Schedule line data (delivery dates and confirmed quantities per item)
+- **VBPA**: Partner data (ship-to, bill-to, payer, and so on)
+- **VBKD**: Business data (payment terms, incoterms, pricing date)
+- **VBFA**: Sales document flow (links order, delivery, and invoice)
+- **KONV**: Pricing conditions (in S/4HANA this is replaced by **PRCD_ELEMENTS**)
+
+Delivery and billing documents follow the same header/item pattern in **LIKP/LIPS** and **VBRK/VBRP**."
+8,"Which SAP table stores material master data, and which table stores plant-specific material data?","In SAP, material master data and plant-specific material data are stored in these tables:
+
+- `MARA` – Stores general Material Master Data, such as material number, material type, and industry sector.
+- `MARC` – Stores Plant-Specific Material Data, such as plant, MRP type, procurement type, and lot size.
+
+Remember: `MARA` = General Material Data, `MARC` = Plant-Specific Material Data.","The SAP tables that store material master data are:
+
+* **MARA** (General Material Data): Stores client-level material master data, such as the material number, creation date, material type, industry sector, base unit of measure, and weight/dimensions.
+* **MARC** (Plant Data for Material): Stores plant-specific material data, such as the purchasing group, MRP type, batch management indicator, production storage location, and safety stock.","Material master data is split across several tables, with these two as the core:
+
+- **MARA**: General material data, valid at client level (material number, material type, material group, base unit of measure, gross/net weight, industry sector)
+- **MARC**: Plant-specific material data (plant, MRP type, MRP controller, procurement type, reorder point, lot size, planned delivery time)
+
+They are linked by the material number **MATNR**. MARC is keyed by MATNR plus the plant **WERKS**.
+
+Other material master tables you'll commonly use:
+
+- **MAKT**: Material descriptions (language-dependent texts)
+- **MARD**: Storage location data (stock quantities per storage location)
+- **MBEW**: Material valuation data (valuation price, price control, moving average or standard price)
+- **MVKE**: Sales organization data (sales and distribution views)
+- **MLAN**: Tax classification data
+- **MARM**: Alternative units of measure
+
+In S/4HANA, **MATDOC** replaces the older material document tables (MKPF/MSEG), and stock quantities are derived from it, though MARA, MARC, and the others above remain in use."
+9,"Which table stores accounting document headers, and which table stores accounting line items?","In SAP, accounting document data is traditionally stored in these two main tables:
+
+- `BKPF` – Stores accounting document header data, such as document number, company code, document date, and posting date.
+- `BSEG` – Stores accounting document line-item data, such as G/L account, posting key, amount, and vendor or customer details.
+
+Remember: `BKPF` = Header, `BSEG` = Line Items.
+
+Note: In SAP S/4HANA, `ACDOCA` is the Universal Journal table for financial accounting line items.","The SAP tables that store accounting document data are:
+
+* **BKPF** (Accounting Document Header): Stores header-level information such as the company code, document number, fiscal year, posting date, document date, user ID, and currency.
+* **BSEG** (Accounting Document Segment): Stores line-item level details such as the account number (G/L, customer, or vendor), posting key, debit/credit indicator, amount, tax code, and assignment details.","Accounting documents are stored in these two main tables:
+
+- **BKPF**: Accounting document header (company code, document number, fiscal year, document type, posting date, document date, currency, reference, entry user)
+- **BSEG**: Accounting document line items (line item number, posting key, GL account, debit/credit indicator, amount, customer or vendor, cost center, tax code)
+
+They are linked by company code **BUKRS**, document number **BELNR**, and fiscal year **GJAHR**. Line items in BSEG are further identified by the item number **BUZEI**.
+
+Related tables you'll often use:
+
+- **BSIK / BSAK**: Vendor open items / cleared items
+- **BSID / BSAD**: Customer open items / cleared items
+- **BSIS / BSAS**: GL account open items / cleared items
+- **FAGLFLEXA**: General ledger line items (New GL)
+- **ACDOCA**: The Universal Journal in S/4HANA, which holds all line items and is the central source of truth
+
+In S/4HANA, BSEG is no longer the primary store. Line items live in ACDOCA, and BSEG still exists for compatibility. The open/cleared item tables (BSIK, BSAK, BSID, BSAD, BSIS, BSAS) are replaced by compatibility views reading from ACDOCA. BKPF remains in use as the header table."
+10,Which BAPI is commonly used to create a sales order in SAP?,"The BAPI commonly used to create a sales order in SAP is `BAPI_SALESORDER_CREATEFROMDAT2`.
+
+- Purpose: Creates a sales order using header data, item data, partner data, and other relevant details.
+- Example: It can be called from an ABAP program to create a sales order automatically.
+- Commit: Call `BAPI_TRANSACTION_COMMIT` to save the changes after a successful creation.","The BAPI commonly used to create a sales order in SAP is **`BAPI_SALESORDER_CREATEFROMDAT2`**.
+
+*(Note: `BAPI_SALESORDER_CREATEFROMDATA` can also create sales orders, but `BAPI_SALESORDER_CREATEFROMDAT2` is the updated version that supports more fields and is the standard choice in modern ABAP development).*","The commonly used BAPI is **BAPI_SALESORDER_CREATEFROMDAT2**. It creates a sales order with header, items, partners, schedule lines, and conditions in one call.
+
+Key parameters:
+
+- **ORDER_HEADER_IN** / **ORDER_HEADER_INX**: Header data and the flag structure marking which fields are filled
+- **ORDER_ITEMS_IN** / **ORDER_ITEMS_INX**: Item data (material, quantity, plant) and its flag structure
+- **ORDER_PARTNERS**: Partner functions such as sold-to (AG) and ship-to (WE)
+- **ORDER_SCHEDULES_IN** / **ORDER_SCHEDULES_INX**: Schedule lines
+- **ORDER_CONDITIONS_IN** / **ORDER_CONDITIONS_INX**: Pricing conditions
+- **RETURN**: Messages from the call, which you should always check for errors
+
+After calling it, you must follow with **BAPI_TRANSACTION_COMMIT** to save the order, or **BAPI_TRANSACTION_ROLLBACK** if there are errors.
+
+Related BAPIs:
+
+- **BAPI_SALESORDER_CHANGE**: Change an existing sales order
+- **BAPI_SALESORDER_GETLIST**: List sales orders for a customer
+- **BAPI_SALESORDER_SIMULATE**: Simulate an order without saving it
+- **BAPI_SALESORDER_GETSTATUS**: Read the status of a sales order
+
+You can find and test BAPIs in **BAPI** (the BAPI Explorer) or **SE37** (Function Builder)."
+11,What is the difference between COMMIT WORK and COMMIT WORK AND WAIT in SAP ABAP?,"In SAP ABAP, the main difference is whether the program waits for update tasks to finish before continuing.
+
+| `COMMIT WORK`                                                                                    | `COMMIT WORK AND WAIT`                                              |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------- |
+| Triggers the database commit and update processing asynchronously from the caller's perspective. | Waits for high-priority (VB1) update processing to finish.          |
+| The program continues without waiting for the VB1 update result.                                 | The program waits for the VB1 update result.                        |
+| Does not provide the VB1 update success/failure result through `sy-subrc`.                       | Sets `sy-subrc = 0` if VB1 processing succeeds, or `4` if it fails. |
+
+### Example
+
+```
+COMMIT WORK.
+```
+
+The program continues without waiting for high-priority update processing to finish.
+
+```
+COMMIT WORK AND WAIT.
+
+IF sy-subrc = 0.
+  WRITE: 'Update successful'.
+ELSE.
+  WRITE: 'Update failed'.
+ENDIF.
+```
+
+The program waits for the high-priority update result before checking `sy-subrc`.
+
+Interview tip: Use `COMMIT WORK AND WAIT` when you need to know whether synchronous-waited update processing succeeded before continuing. It does not guarantee that every asynchronous task or every downstream process has finished.","The core difference between **`SELECT SINGLE`** and **`SELECT ... UP TO 1 ROWS`** in SAP ABAP Open SQL lies in **what criteria you are searching by**, **how the database processes the request**, and **the resulting data structure**.
+
+---
+
+### Key Differences at a Glance
+
+| Feature | `SELECT SINGLE` | `SELECT ... UP TO 1 ROWS` |
+| --- | --- | --- |
+| **Primary Purpose** | Fetching a specific, unique record (typically using the **primary key** or a unique secondary index). | Fetching the ""first"" matching record based on arbitrary non-key conditions or sorting. |
+| **Key Requirement** | Best practice is to specify the complete primary key to ensure exact single-row lookup. | Can be used with **any** WHERE clause, even non-key fields. |
+| **`ORDER BY` Support** | Traditionally used without sorting; returns whichever record the database finds first if keys aren't unique. | Frequently used with **`ORDER BY`** to deterministically fetch the highest, lowest, latest, or earliest record. |
+| **Target Output** | Fetches directly into a **Work Area / Structure** (`INTO @DATA(ls_wa)`). | Fetches into an **Internal Table** (`INTO TABLE @DATA(lt_itab)`) or a work area using `INTO @DATA(ls_wa)`. |
+| **Database Performance** | Highly optimized for direct primary key reads (database stops searching immediately upon finding the record). | Evaluates the result set (and sorting if `ORDER BY` is used) before limiting to 1 row. |
+
+---
+
+### Detailed Breakdown
+
+#### 1. `SELECT SINGLE`
+
+* **When to use:** When you want to retrieve **one exact record** and you know its unique key (e.g., fetching a material master from `MARA` using `MATNR`, or an order header from `VBAK` using `VBELN`).
+* **Behavior:** It tells the database: *""Find this specific record by its key.""* Once the database locates the record, it stops searching immediately.
+* **Code Example:**
+```abap
+SELECT SINGLE *
+  FROM mara
+  INTO @DATA(ls_mara)
+  WHERE matnr = @iv_matnr.
+
+```
+
+
+
+#### 2. `SELECT ... UP TO 1 ROWS`
+
+* **When to use:** When you want to query a table using **non-key fields** or when you need to sort the data (`ORDER BY`) to get a specific top/first record (e.g., getting the *latest* change date for a customer or the *highest* amount item).
+* **Behavior:** It evaluates the full query (including any sorting or secondary indexes), builds the result set, and then limits the output sent back to ABAP to just 1 row. Without `ORDER BY`, ""the first row"" is non-deterministic (it depends on how the database engine chooses to return it).
+* **Code Example:**
+```abap
+"" Get the single most recent flight booking for a carrier
+SELECT *
+  FROM sflight
+  INTO @DATA(ls_flight)
+  WHERE carrid = 'LH'
+  ORDER BY fldate DESCENDING
+  UP TO 1 ROWS.
+ENDSELECT.
+
+```
+
+
+*(Note: You can also use `INTO TABLE @DATA(lt_flights)` with `UP TO 1 ROWS` to catch the result in an internal table).*
+
+---
+
+### Summary Recommendation
+
+* Use **`SELECT SINGLE`** whenever you are reading by a unique primary key. It is semantically cleaner and signals to anyone reading your code that you expect one and only one record based on a unique identifier.
+* Use **`SELECT ... UP TO 1 ROWS`** when you are filtering by non-key fields or when you need to combine it with an `ORDER BY` clause to find a maximum, minimum, or chronologically first/last record.","**COMMIT WORK** triggers the database commit and starts the update work processes asynchronously, then returns control to your program right away. Your program does not wait for the update to finish.
+
+**COMMIT WORK AND WAIT** does the same commit, but your program pauses until the update work processes have finished processing the update (the V1 update modules, in particular). Control returns to your program only after the update is done, and **sy-subrc** tells you whether it succeeded.
+
+**Why it matters**
+
+- With plain COMMIT WORK, sy-subrc = 0 only means the commit was handed off. The actual update could still fail afterward, and your program wouldn't know.
+- With COMMIT WORK AND WAIT, the data is guaranteed to be on the database when your program continues. sy-subrc = 0 means the update completed, and a non-zero value means it failed.
+
+**Typical use case**
+
+If you create a document with a BAPI and then immediately read it back, or use its number in a follow-up call (for example, creating a delivery for a sales order you just created), use the synchronous version. Otherwise the second step may run before the first is saved and fail with ""document not found"".
+
+This is also why **BAPI_TRANSACTION_COMMIT** has a **WAIT** parameter. Passing `WAIT = 'X'` makes it behave like COMMIT WORK AND WAIT:
+
+```abap
+CALL FUNCTION 'BAPI_TRANSACTION_COMMIT'
+  EXPORTING
+    wait = 'X'.
+```
+
+**Trade-offs**
+
+- COMMIT WORK is faster, since your program doesn't block, and suits cases where nothing depends on the update finishing.
+- COMMIT WORK AND WAIT is slower, but safer when the next step depends on the saved data.
+
+Note that the wait only covers V1 (and dialog) updates. V2 updates may still be running afterward, since they are lower priority and processed separately."
+12,Which BAPI is used to post a goods movement in SAP?,"The BAPI commonly used to post a goods movement in SAP is `BAPI_GOODSMVT_CREATE`.
+
+- Purpose: Posts goods movements such as goods receipt, goods issue, and stock transfers.
+- Example: Posting a goods receipt against a purchase order (movement type `101`).
+- Commit: Call `BAPI_TRANSACTION_COMMIT` after successful posting to save the changes.","The BAPI commonly used to post a goods movement in SAP is **`BAPI_GOODSMVT_CREATE`**.
+
+---
+
+### Key Details
+
+* **Functionality:** It is used for various inventory management movements, such as goods receipt for purchase orders, goods issue for sales orders or cost centers, scrap postings, and stock transfers.
+* **Supporting Structure:** You must pass header data (`GOODSMVT_HEADER`), item data (`GOODSMVT_CODE` to specify the movement type like `01` for goods receipt or `03` for goods issue), and line items (`GOODSMVT_ITEM`).
+* **Post-Processing:** Because BAPIs do not automatically commit database changes, you typically need to follow up with **`BAPI_TRANSACTION_COMMIT`** if the posting is successful, or **`BAPI_TRANSACTION_ROLLBACK`** if errors occur.","The commonly used BAPI is **BAPI_GOODSMVT_CREATE**. It posts goods receipts, goods issues, stock transfers, and other material movements.
+
+Key parameters:
+
+- **GOODSMVT_HEADER**: Header data (posting date, document date, reference document, header text)
+- **GOODSMVT_CODE**: Controls which transaction the BAPI behaves like. Common values are `01` (goods receipt for a PO, MB01), `02` (goods receipt for a production order, MB31), `03` (goods issue, MB1A), `04` (transfer posting, MB1B), and `05` (other goods receipts, MB1C)
+- **GOODSMVT_ITEM**: Item data (material, plant, storage location, movement type, quantity, unit of measure, PO number and item for receipts against a PO)
+- **GOODSMVT_HEADRET**: Returns the material document number and year
+- **RETURN**: Messages from the call, which you should check for errors
+
+As with other BAPIs, it does not save by itself. Follow it with **BAPI_TRANSACTION_COMMIT** (preferably with `WAIT = 'X'` if the next step depends on the document), or **BAPI_TRANSACTION_ROLLBACK** if the RETURN table contains errors.
+
+```abap
+CALL FUNCTION 'BAPI_GOODSMVT_CREATE'
+  EXPORTING
+    goodsmvt_header  = ls_header
+    goodsmvt_code    = ls_code
+  IMPORTING
+    goodsmvt_headret = ls_headret
+  TABLES
+    goodsmvt_item    = lt_items
+    return           = lt_return.
+```
+
+Related BAPIs:
+
+- **BAPI_GOODSMVT_CANCEL**: Cancel (reverse) a material document
+- **BAPI_MATERIAL_GETLIST** and **BAPI_MATERIAL_AVAILABILITY**: Check material data and stock availability before posting"
+13,Which SAP transaction code is commonly used to activate and maintain SAP Gateway OData services?,"The SAP transaction code commonly used to activate and maintain SAP Gateway OData services is `/IWFND/MAINT_SERVICE`.
+
+- `/IWFND/MAINT_SERVICE` – Activate, register, and maintain OData services.
+- `/IWFND/GW_CLIENT` – Test OData services using the SAP Gateway Client.
+- `/IWBEP/REG_SERVICE` – Register OData services in the backend in relevant system setups.
+
+Interview tip: Use `/IWFND/MAINT_SERVICE` to register and activate an OData service so that it can be accessed by applications.",The SAP transaction code used to activate and maintain OData services is **/IWFND/MAINT_SERVICE**.,"The key transaction code is **/IWFND/MAINT_SERVICE** (Activate and Maintain Services). It runs on the SAP Gateway hub system, which in many landscapes is the same system as the backend (embedded deployment).
+
+From there you can:
+
+- Add a service from the backend catalog (button **Add Service**), selecting the system alias and technical service name
+- Maintain the ICF node, system aliases, and the service's SAP Gateway configuration
+- Test the service with **Gateway Client**
+- Browse the service's entity sets and metadata
+
+Related transaction codes:
+
+- **SEGW**: SAP Gateway Service Builder, where you design and develop OData services (entity types, entity sets, data provider classes)
+- **/IWFND/GW_CLIENT**: SAP Gateway Client, to test OData requests (GET, POST, and so on) and inspect the response
+- **/IWFND/ERROR_LOG**: Error log on the Gateway hub, for diagnosing failed calls
+- **/IWBEP/ERROR_LOG**: Error log on the backend system
+- **/IWFND/CACHE_CLEANUP** and **/IWBEP/CACHE_CLEANUP**: Clear the metadata caches on the hub and backend after changing a service
+- **/IWFND/APPS_LOG**: Application log for Gateway
+
+In S/4HANA, many standard OData services are published through **/IWFND/MAINT_SERVICE** too, though newer services (OData V4) are registered using **/IWFND/V4_ADMIN** (Service Group Maintenance for OData V4)."
+14,What happens if FOR ALL ENTRIES is executed with an empty internal table?,"In SAP ABAP, if `FOR ALL ENTRIES` is executed with an empty internal table, the `WHERE` condition is ignored, and the `SELECT` may retrieve all records from the database table.
+
+### Example
+
+```
+SELECT *
+  FROM ekpo
+  INTO TABLE @DATA(lt_ekpo)
+  FOR ALL ENTRIES IN @lt_ekko
+  WHERE ebeln = @lt_ekko-ebeln.
+```
+
+If `lt_ekko` is empty, the `WHERE` condition associated with `FOR ALL ENTRIES` is ignored, potentially fetching the entire `EKPO` table.
+
+### How to prevent it
+
+Always check whether the internal table is empty before executing the query:
+
+```
+IF lt_ekko IS NOT INITIAL.
+  SELECT *
+    FROM ekpo
+    INTO TABLE @DATA(lt_ekpo)
+    FOR ALL ENTRIES IN @lt_ekko
+    WHERE ebeln = @lt_ekko-ebeln.
+ENDIF.
+```
+
+Interview tip: Always use `IF itab IS NOT INITIAL` before `FOR ALL ENTRIES` to avoid unintended full-table reads and performance issues.","If the internal table used in a `FOR ALL ENTRIES` clause is empty (`lines( itab ) = 0`), SAP ABAP Open SQL **ignores the `FOR ALL ENTRIES` condition entirely** and behaves as if the restriction does not exist.
+
+---
+
+### Key Consequences
+
+1. **Massive Data Retrieval:** Instead of returning no rows (which is usually the logical expectation), the database will fetch **all records** from the database table.
+2. **Performance and Memory Issues:** This can lead to severe performance degradation, high database load, and often results in an ABAP runtime dump (such as `TSV_TNEW_PAGE_ALLOC_FAILED` due to memory exhaustion).
+3. **Incorrect Business Logic:** Your program will process unintended data from the entire database table rather than filtered records.
+
+---
+
+### How to Prevent It
+
+Always explicitly check that the internal table is **not initial** before executing the query:
+
+```abap
+IF lt_orders IS NOT INITIAL.
+  SELECT matnr, menge
+    FROM ekpo
+    FOR ALL ENTRIES IN @lt_orders
+    WHERE ebeln = @lt_orders-ebeln
+    INTO TABLE @DATA(lt_items).
+ELSE.
+  "" Handle the empty table scenario gracefully (e.g., clear result table)
+  CLEAR lt_items.
+ENDIF.
+
+```
+
+*(Note: In modern ABAP/Open SQL releases, modern alternatives like **`FOR ALL ENTRIES` combined with `RESPECTING BLANKS**` or using **`IN @( VALUE #( FOR ... ) )`** or **CDS view table functions / JOINs** often help avoid these pitfalls, but the `IF ... IS NOT INITIAL` check remains a mandatory safeguard for legacy `FOR ALL ENTRIES` statements.)*","If the driver table in a **FOR ALL ENTRIES** clause is empty, the database ignores the FOR ALL ENTRIES condition entirely. The WHERE conditions that reference the driver table are dropped, so the SELECT returns **all rows** that match the remaining conditions, which is often the entire table.
+
+This is one of the most common and dangerous ABAP pitfalls. It can produce a huge result set, long runtimes, memory dumps, and silently wrong data, because the program carries on as if the lookup had worked correctly.
+
+**The fix: always check the driver table first**
+
+```abap
+IF lt_vbak IS NOT INITIAL.
+  SELECT vbeln, posnr, matnr
+    FROM vbap
+    INTO TABLE @DATA(lt_vbap)
+    FOR ALL ENTRIES IN @lt_vbak
+    WHERE vbeln = @lt_vbak-vbeln.
+ENDIF.
+```
+
+**Other behaviors to know about FOR ALL ENTRIES**
+
+- **Duplicates are removed.** The result is automatically made distinct, so identical rows collapse into one. If you need duplicates, include the full primary key in the field list.
+- **Sort and deduplicate the driver table** before the SELECT (`SORT` then `DELETE ADJACENT DUPLICATES`) to avoid redundant database calls.
+- **No aggregate functions** such as SUM or COUNT, and no ORDER BY (apart from `ORDER BY PRIMARY KEY`).
+- **The statement is split into blocks.** The database interface sends the driver table entries in chunks, so very large driver tables mean many round trips.
+
+**Alternative:** In modern ABAP (7.40 SP05 and later), a **JOIN** or a subquery against a database table is usually faster and avoids the empty-table trap. Joining with an internal table is available from 7.52."
+15,Can a hashed internal table contain duplicate key values?,"No. A hashed internal table in SAP ABAP cannot contain duplicate key values because its key must be unique.
+
+- Hashed table: Uses a unique key; duplicate key entries are not allowed.
+- Sorted table: Can have a unique or non-unique key, depending on its definition.
+- Standard table: Can contain duplicate entries.
+
+Interview tip: Hashed tables are useful for fast key-based lookups when each key must uniquely identify a record.","**No.** A hashed internal table **cannot** contain duplicate key values.
+
+---
+
+### Key Rules of Hashed Internal Tables
+
+1. **Strictly Unique Keys:** By definition, the table key of a hashed internal table must always be defined as **`UNIQUE`**. Every single entry in the table must have a distinct, unique key combination.
+2. **Runtime Error on Duplicates:** If you attempt to insert a record into a hashed table that shares the exact same key as an existing record (using statements like `INSERT`), the runtime framework will trigger a non-catchable runtime error (or a syntax/sy-subrc error depending on the syntax variant, but the system will reject the duplicate entry).
+3. **Primary vs. Secondary Keys:**
+* The **primary key** of a hashed table is always unique by definition.
+* You can also define **secondary keys** on internal tables; a secondary key can be defined as `NON-UNIQUE`, but the table's primary hashed key itself remains strictly unique.
+
+
+
+### Summary of Internal Table Types for Comparison
+
+| Table Type | Can Contain Duplicate Keys? | Key Access Performance |
+| --- | --- | --- |
+| **Standard Table** | Yes (can be unique or non-unique) | Linear ($O(n)$) |
+| **Sorted Table** | Yes (if defined as `NON-UNIQUE`) | Logarithmic ($O(\log n)$) via binary search |
+| **Hashed Table** | **No** (always `UNIQUE`) | Constant ($O(1)$) via hash algorithm |","No, not if the key is declared **UNIQUE**, and a hashed table requires a unique key. Every hashed table must be defined with `WITH UNIQUE KEY`, so duplicate key values are never allowed in the table's primary key.
+
+```abap
+DATA lt_hashed TYPE HASHED TABLE OF mara
+                    WITH UNIQUE KEY matnr.
+```
+
+**What happens if you try to insert a duplicate**
+
+- `INSERT ... INTO TABLE` sets **sy-subrc = 4** and does not insert the row.
+- `APPEND` is not allowed on hashed tables at all, since there is no row order to append to.
+- `INSERT ... INTO TABLE ... ` with `COLLECT` behaves differently: COLLECT adds numeric fields to the existing row if the key already exists.
+- Filling the table in one go with `INTO TABLE` from a SELECT, or with `MOVE`/assignment from another table, causes a **runtime error** (dump) if the source contains duplicate keys, so deduplicate first.
+
+**Secondary keys**
+
+A hashed table can have additional **secondary keys**, and those can be non-unique if they are sorted or hashed secondary keys declared `NON-UNIQUE`. Only the primary key must be unique.
+
+**For comparison**
+
+| Table type | Primary key |
+|---|---|
+| Standard | Non-unique only |
+| Sorted | Unique or non-unique |
+| Hashed | Unique only |
+
+If your data can have duplicate keys and you still want fast access, use a **sorted table with a non-unique key**, or a standard table with a sorted secondary key."
