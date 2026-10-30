@@ -1,0 +1,284 @@
+﻿Q.No.,Zero-shot,Response,few shot,response
+1,Classify this NovaTech Solutions expense: Laptop purchase for a newly hired software developer.,"**Equipment / Capital Expenditures (CapEx)**
+
+### Expense Breakdown
+
+* **Account Category:** Computer Equipment / Hardware
+* **Expense Type:** Capital Expenditure (CapEx)
+* **Tax / Accounting Treatment:** Since laptops are long-term physical assets with a multi-year useful life, the purchase is capitalized on the balance sheet and depreciated over its useful life (typically 3 to 5 years), rather than being fully expensed immediately as a standard daily operational expense (OpEx).","Classify NovaTech Solutions expenses:
+""Server purchase for development team"" → CAPEX-IT
+""Annual employee celebration"" → OPEX-Welfare
+""Developer laptop purchase"" →",CAPEX-IT
+2,Classify this NovaTech Solutions expense: Annual team dinner celebrating successful product delivery.,"**Expense Category:** Meals & Entertainment (or Employee Welfare / Team Building)
+
+### Categorization Details
+
+* **GL Account / Expense Line:** Meals & Entertainment — Team Events / Employee Relations
+* **Tax Deductibility (US Standard):** Typically 50% deductible under standard business meal rules, provided it is reasonable and directly related to business operations. (Note: Company-wide recreational/social events open to all employees can sometimes qualify for 100% deductibility under specific IRS provisions).
+* **Business Purpose:** Employee retention, team recognition, and celebrating project milestones.","Classify NovaTech Solutions expenses:
+""Developer laptop purchase"" → CAPEX-IT
+""Team festival dinner"" → OPEX-Welfare
+""Product launch team dinner"" →","""Product launch team dinner"" → **OPEX-Welfare** (or OPEX-Meals & Entertainment)"
+3,Classify this NovaTech Solutions expense: Annual maintenance contract renewal for office networking equipment.,"**Expense Classification:** Operating Expense (OpEx) — Information Technology (IT) Maintenance & Infrastructure / Software & Hardware Maintenance
+
+**GL Account Suggestion:** 6100 - IT & Infrastructure Expense / Equipment Maintenance & Repairs
+
+---
+
+### Key Details
+
+* **Type:** Operating Expense (OpEx)
+* **Rationale:** Annual maintenance contracts (AMCs) represent routine operational recurring costs required to keep existing capital equipment running and supported. Because it covers maintenance rather than acquiring a new asset or significantly upgrading equipment capacity/lifespan, it is expensed in the period incurred rather than capitalized (CapEx).
+* **Tax Treatment:** Fully deductible as an ordinary and necessary business expense in the period/fiscal year to which the service coverage applies.","Classify NovaTech Solutions expenses:
+""Server purchase"" → CAPEX-IT
+""Network equipment maintenance renewal"" → OPEX-Maintenance
+""Annual networking equipment AMC renewal"" →",OPEX-Maintenance
+4,Classify this NovaTech Solutions expense: Cloud certification training for software engineers.,"In a standard accounting framework, **Cloud certification training for software engineers** is classified as follows:
+
+* **Primary Account Category:** **Operating Expenses (OpEx)**
+* **Sub-Account / Line Item:** **Training & Development** (or *Employee Professional Development* / *Continuing Education*)
+* **Department Assignment:** **Research & Development (R&D)** or **Engineering / Product Development**
+
+---
+
+### Key Financial & Accounting Considerations
+
+1. **OpEx vs. COGS (Cost of Goods Sold):**
+* Unless the engineers are dedicated purely to billable, client-facing professional services where training directly impacts project delivery, training expenses belong in **OpEx** under departmental overhead rather than COGS.
+
+
+2. **Departmental Allocation:**
+* Allocating this to the **R&D / Engineering** department helps ensure accurate departmental reporting and cost tracking.
+
+
+3. **Tax & R&D Tax Credit Eligibility:**
+* General employee training is usually treated as a fully deductible operating expense.
+* *Note:* While direct wage costs for software engineers engaged in qualified research activities often qualify for R&D tax credits, standard external training and certifications typically do not qualify as direct R&D expenditures unless directly tied to an eligible research project.","Classify NovaTech Solutions expenses:
+""Technical workshop for developers"" → OPEX-Training
+""Employee festival lunch"" → OPEX-Welfare
+""Cloud certification course for engineers"" →",**OPEX-Training** (or **OPEX-Training & Development**)
+5,Classify this GreenLeaf Industries expense: Purchase of a new industrial production machine.,"This expense should be classified as a **Capital Expenditure (CapEx)**.
+
+### Why it is CapEx:
+
+* **Long-Term Asset:** An industrial production machine is a fixed asset (Property, Plant, and Equipment) that provides economic benefits over multiple years, rather than being consumed within the current accounting period.
+* **Accounting Treatment:** Instead of being deducted immediately from revenue as an operating expense (OpEx) on the income statement, the purchase cost is capitalized on the balance sheet and then **depreciated** over its useful life.","Classify GreenLeaf Industries expenses:
+""New factory production machine"" → CAPEX-Equipment
+""Factory maintenance contract"" → OPEX-Maintenance
+""Industrial packaging machine purchase"" →",CAPEX-Equipment
+6,Classify this GreenLeaf Industries expense: Annual maintenance contract for factory conveyor belts.,"This GreenLeaf Industries expense should be classified as follows:
+
+* **Financial Classification:** **Operating Expense (OpEx)**
+* **General Ledger Account:** **Repairs and Maintenance Expense** (or **Factory Overhead / Plant Maintenance**)
+
+### Reasoning
+
+* **Operating Expense (OpEx):** Routine maintenance contracts designed to keep existing factory equipment (like conveyor belts) in normal, efficient operating condition are treated as current-period operational costs, not capital investments.
+* **Why not Capital Expense (CapEx)?** CapEx applies when an expenditure significantly extends the useful life of the asset, increases its capacity, or improves its functionality beyond the original specs. Regular servicing and annual contracts fall under day-to-day operational upkeep.
+
+### Accounting & Tax Treatment
+
+* **Income Statement:** Recorded immediately as an expense in the period the service is contracted or incurred, reducing taxable operating income for the year.
+* **Accrual Accounting:** If paid annually upfront, it should typically be set up as a **Prepaid Expense** asset account and amortized monthly over the 12-month contract period to match expenses with the revenues they support.","Classify GreenLeaf Industries expenses:
+""Factory conveyor repair contract"" → OPEX-Maintenance
+""New production machine"" → CAPEX-Equipment
+""Annual conveyor belt maintenance renewal"" →",OPEX-Maintenance
+7,Classify this GreenLeaf Industries expense: Annual employee appreciation lunch at the factory.,"An **Annual employee appreciation lunch at the factory** is classified as an **Employee Welfare & Benefits Expense** (or **Meals & Entertainment / Staff Welfare**).
+
+### Accounting & Tax Classification
+
+* **General Ledger Account:** **Staff Welfare Expenses** or **Employee Relations & Morale** (under Operating Expenses / Indirect Labor).
+* **Tax Deductibility (U.S. Internal Revenue Code Example):** Generally **100% tax-deductible**. While typical business meals are subject to a 50% deduction limit, standard tax rules (such as IRC § 274(n)(2)(B)) allow a 100% deduction for company-wide social events, parties, and recreational activities primarily for the benefit of non-highly compensated employees.
+* **Payroll Tax Impact:** **Tax-free fringe benefit** to employees under the *de minimis* fringe benefit rule, as an occasional employee appreciation event is unreasonable or administratively impracticable to account for individually.
+
+---
+
+### Recommended Journal Entry
+
+| Account Title | Debit | Credit |
+| --- | --- | --- |
+| **Staff Welfare / Employee Appreciation Expense** | $X,XXX |  |
+| **Cash / Accounts Payable** |  | $X,XXX |","Classify GreenLeaf Industries expenses:
+""Factory employee celebration lunch"" → OPEX-Welfare
+""Conveyor maintenance contract"" → OPEX-Maintenance
+""Employee appreciation lunch"" →",`OPEX-Welfare`
+8,Classify this SkyBridge Logistics expense: Diesel purchased for company delivery trucks.,"Diesel purchased for company delivery trucks is classified as an **Operating Expense (OpEx)**, specifically under **Fleet Fuel Expense** or **Vehicle Expense**.
+
+### Classification Breakdown
+
+* **Broad Category:** Operating Expenses (OpEx) / Cost of Operations
+* **Specific Ledger Account:** Fuel Expense, Fleet Operations, or Vehicle Operating Costs
+* **Tax Deductibility:** Fully deductible as a standard business-related vehicle and transportation expense.","Classify SkyBridge Logistics expenses:
+""Delivery truck diesel"" → OPEX-Transport
+""Driver appreciation event"" → OPEX-Welfare
+""Fuel purchase for delivery fleet"" →","""OPEX-Transport"" or ""OPEX-Fuel"" (depending on whether your system tracks fuel separately or under general transport/vehicle costs; to match your existing pattern, **OPEX-Transport** fits best)."
+9,Classify this SkyBridge Logistics expense: Purchase of a new warehouse forklift.,"This expense should be classified as a **Capital Expenditure (CapEx)** under **Property, Plant, and Equipment (PP&E)**.
+
+### Expense Classification Details
+
+* **Category:** Capital Expenditure (CapEx)
+* **General Ledger Account:** Warehouse Equipment / Machinery and Equipment
+* **Accounting Treatment:** Capitalized on the balance sheet rather than expensed immediately on the income statement, then depreciated over its estimated useful life.
+
+### Why this classification?
+
+A warehouse forklift is a long-term tangible asset that provides economic benefits to SkyBridge Logistics over multiple accounting periods (typically several years). Under standard accrual accounting rules, purchases of significant equipment with a useful life of more than one year are capitalized as assets and depreciated over time, rather than recorded as a direct operating expense (OpEx).","Classify SkyBridge Logistics expenses:
+""New warehouse forklift"" → CAPEX-Equipment
+""Delivery fleet diesel"" → OPEX-Transport
+""New electric warehouse forklift"" →",CAPEX-Equipment
+10,Classify this SkyBridge Logistics expense: Annual appreciation gifts for delivery drivers.,"**Employee Benefits & Welfare** (or **Staff Appreciation / Employee Relations**)
+
+### Categorization Breakdown
+
+* **Primary Account:** Employee Benefits & Welfare
+* **Alternative Account:** Staff Appreciation / Gifts & Recognition
+* **Tax / Deductible Note:** Generally fully deductible as a legitimate business expense, though specific tax handling may vary if treated as de minimis fringe benefits vs. taxable compensation depending on gift value and local regulations.","Classify SkyBridge Logistics expenses:
+""Driver appreciation gifts"" → OPEX-Welfare
+""Fleet fuel purchase"" → OPEX-Transport
+""Delivery staff festival gifts"" →",`OPEX-Welfare`
+11,Classify this BrightCare Healthcare expense: Disposable surgical gloves purchased for hospital operations.,"**Direct Operating Expense (Medical Supplies & Consumables)**
+
+In hospital and healthcare accounting, disposable surgical gloves used for daily clinical operations are classified as **Medical & Surgical Supplies** under **Direct Operating Expenses** (or Cost of Services / Cost of Goods Sold).
+
+### Classification Breakdown
+
+| Accounting Category | Classification |
+| --- | --- |
+| **Financial Statement** | Income Statement (Profit & Loss) |
+| **Primary Account Group** | Operating Expenses (OpEx) / Cost of Services |
+| **Sub-Account / Line Item** | Medical & Surgical Supplies / Clinical Consumables |
+| **Balance Sheet Impact** | Held as **Current Assets (Inventory)** until issued/used |
+| **Tax / Cost Center** | Departmental Direct Cost (e.g., Surgery / Operating Room) |","Classify BrightCare Healthcare expenses:
+""Surgical gloves purchase"" → OPEX-Medical
+""Hospital staff celebration"" → OPEX-Welfare
+""Disposable surgical masks purchase"" →","""OPEX-Medical"""
+12,Classify this BrightCare Healthcare expense: Purchase of a new MRI scanner.,"Under healthcare financial and accounting standards, the purchase of a new MRI scanner for BrightCare Healthcare is classified as a **Capital Expenditure (CapEx)**.
+
+### Key Details & Financial Accounting Treatment:
+
+* **Asset Classification:** Long-term fixed asset (Property, Plant, and Equipment - PP&E).
+* **Capitalization vs. Expense:** Because an MRI scanner is a major piece of medical equipment with a high cost and a useful life extending well beyond one fiscal year (typically 7 to 10 years), the purchase price cannot be fully expensed in the year of purchase.
+* **Financial Impact:**
+* **Balance Sheet:** Capitalized as a non-current asset under PP&E.
+* **Income Statement:** The cost is gradually recognized over its estimated useful life through annual **Depreciation Expense** rather than an immediate operational cost.
+
+
+* **Cash Flow Statement:** Reported as an outflow in the **Cash Flow from Investing Activities** section.","Classify BrightCare Healthcare expenses:
+""New MRI scanner"" → CAPEX-Medical
+""Disposable gloves"" → OPEX-Medical
+""New hospital CT scanner"" →","""New hospital CT scanner"" → CAPEX-Medical"
+13,Classify this BrightCare Healthcare expense: Annual air-conditioning maintenance contract for hospital wards.,"In healthcare accounting (such as for BrightCare Healthcare), an **annual air-conditioning maintenance contract for hospital wards** is classified as:
+
+* **Primary Account Category:** **Operating Expenses (OpEx)** / **Facilities & Administrative Expenses**
+* **Specific Line Item:** **Repair & Maintenance – Facilities / HVAC Maintenance**
+* **Cost Center:** **Facility Management / Plant Operations** (allocated to **Inpatient Wards / Clinical Support Services**)
+
+### Key Characteristics
+
+* **Nature:** Recurring preventive maintenance service necessary to keep clinical environments climate-controlled, air-filtered, and operational.
+* **Accounting Treatment:** Expensed incrementally over the term of the contract (or recognized monthly) rather than capitalized, as routine maintenance maintains the existing condition of the equipment rather than extending its original useful life or upgrading its capacity.","Classify BrightCare Healthcare expenses:
+""Hospital air-conditioning maintenance"" → OPEX-Maintenance
+""New MRI scanner"" → CAPEX-Medical
+""Annual hospital HVAC maintenance renewal"" →",**OPEX-Maintenance** (or **OPEX-Facilities**)
+14,Classify this UrbanNest Properties expense: Monthly rent for the regional administration office.,"**Administrative Expense** (specifically **Rent / Occupancy Expense** under General & Administrative Expenses).
+
+### Accounting Classification Breakdown
+
+* **Financial Statement:** Income Statement (Operating Expenses)
+* **Category:** General & Administrative (G&A)
+* **Account Name:** Office Rent Expense / Occupancy Cost
+* **Cost Type:** Fixed Overhead / Operating Expense (OpEx)
+
+### Rationale
+
+Because the office is used for regional administrative functions rather than directly generating sales or manufacturing goods, it is recorded under **General & Administrative (G&A)** costs rather than direct cost of sales or selling expenses.","Classify UrbanNest Properties expenses:
+""Regional office monthly rent"" → OPEX-Facilities
+""Employee appreciation dinner"" → OPEX-Welfare
+""Monthly rent for administration office"" →","**OPEX-Facilities** (or **OPEX-G&A**)
+
+### Rationale
+
+Like the regional office rent, rent for an administrative facility falls under **Operating Expenses (OPEX)**. Under standard corporate cost coding systems:
+
+* **OPEX-Facilities:** Best match if rent, real estate, and office utilities are unified under facilities overhead.
+* **OPEX-G&A:** Best match if costs are categorized strictly by department function (General & Administrative)."
+15,Classify this UrbanNest Properties expense: Annual elevator maintenance contract for a residential tower.,"This expense is classified as **Operating Expenses (OpEx) – Repairs and Maintenance (R&M)**.
+
+### Key Details
+
+* **Category:** Repairs & Maintenance / Elevator Maintenance
+* **Accounting Treatment:** Expensed in full during the period covered by the contract (or recorded as a Prepaid Expense and amortized monthly if paid annually upfront).
+* **Capitalization Note:** Routine annual service contracts do not qualify as Capital Expenditures (CapEx) because they maintain the elevator's existing operational state rather than extending its original useful life or upgrading its overall performance/capacity.","Classify UrbanNest Properties expenses:
+""Residential tower elevator maintenance"" → OPEX-Maintenance
+""Regional office rent"" → OPEX-Facilities
+""Annual lift maintenance contract renewal"" →",OPEX-Maintenance
+16,Classify this UrbanNest Properties expense: Major structural renovation improving a commercial building's useful life.,"### Expense Classification: **Capital Expenditure (Capitalized Asset / Capital Improvement)**
+
+---
+
+### Key Details & Accounting Treatment
+
+* **Classification Type:** Capital Expenditure (CapEx) / Fixed Asset Addition
+* **Balance Sheet Impact:** Added to the book value of the commercial building (Property, Plant, and Equipment) rather than expensed immediately on the income statement.
+* **Depreciation:** The cost will be depreciated over the asset's remaining or extended useful life in accordance with standard accounting frameworks (e.g., US GAAP, IFRS).
+
+### Why It Is Classified as a Capital Expenditure
+
+Under standard accounting principles, expenses are evaluated based on their effect on the asset:
+
+1. **Prolongs Useful Life:** A major structural renovation substantially increases the functional life of the building beyond its original estimated useful life.
+2. **Increases Value / Adaptability:** It adds permanent value or adapts the property to new uses, distinguishing it from routine repairs and maintenance.
+3. **Repair vs. Capitalization Rule:** Routine maintenance (such as painting, minor leak fixes, or replacing a broken window) keeps the property in normal operating condition and is expensed immediately. Major structural overhauls, by contrast, must be capitalized.","Classify UrbanNest Properties expenses:
+""Major building structural improvement"" → CAPEX-Property
+""Monthly office rent"" → OPEX-Facilities
+""Commercial building renovation extending useful life"" →","""CAPEX-Property"""
+17,Classify this PixelWave Media expense: Paid social media campaign promoting a new streaming series.,"For **PixelWave Media**, a paid social media campaign promoting a new streaming series is classified as a **Marketing and Advertising Expense** (Operating Expense / OpEx).
+
+Here is a more granular breakdown of how this is typically categorized within an accounting and budgeting framework:
+
+### Expense Classification Details
+
+* **Primary Category:** Operating Expenses (OpEx)
+* **Secondary Category:** Sales & Marketing / Promotional Expenses
+* **Sub-Account:** Digital Advertising / Paid Social Media
+
+---
+
+### Key Financial & Tax Considerations
+
+* **Direct vs. Indirect Cost:** If the ad campaign is tied to a specific client project or external client deliverable, it may be tracked as a **direct project cost (Cost of Goods Sold / COGS)** to be billed back or accounted for within project margins. If it is promoting PixelWave's own streaming platform, brand, or general services, it is an **operating expense**.
+* **Tax Deductibility:** In most jurisdictions, advertising and marketing expenses incurred to promote a business or its products are fully tax-deductible as ordinary and necessary business expenses.","Classify PixelWave Media expenses:
+""Paid social media advertising"" → OPEX-Marketing
+""Employee celebration dinner"" → OPEX-Welfare
+""Streaming series promotional campaign"" →","""Streaming series promotional campaign"" → **OPEX-Marketing**"
+18,Classify this PixelWave Media expense: Purchase of a professional video production camera.,"**Capital Expenditure (CapEx)** — specifically categorized under **Equipment & Machinery** (or **Fixed Assets / Production Equipment**).
+
+### Accounting Treatment
+
+* **Balance Sheet:** Recorded as a fixed asset at its purchase price (including shipping and sales tax).
+* **Income Statement:** Not fully expensed upfront. Instead, its cost is depreciated over its useful life (typically 3 to 5 years for video equipment) to account for wear and tear, reducing taxable income incrementally each year.
+
+*(If the item falls under your company’s de minimis capitalization threshold—typically $2,500 for small businesses—it can be expensed immediately under **Equipment Expense** or **Small Tools & Equipment** rather than capitalized).*","Classify PixelWave Media expenses:
+""Professional production camera"" → CAPEX-Equipment
+""Streaming series advertising campaign"" → OPEX-Marketing
+""New cinema-quality recording camera"" →",CAPEX-Equipment
+19,Classify this PixelWave Media expense: Advanced video editing workshop for production employees.,"This expense should be classified as **Professional Development** (or **Employee Training & Education**).
+
+Here is how it fits into common accounting categories for media production companies:
+
+* **Primary Account:** `Professional Development` / `Training & Education` (Operating Expense)
+* **Sub-Account / Project Costing:** If this workshop is tied directly to a specific client deliverable or production project, it can be tracked under **Direct Cost of Goods Sold (COGS) – Labor & Talent Development**, though general skill-building is typically categorized under administrative/operational expenses.
+* **Tax Category:** Fully deductible business expense under employee training and skill enhancement.","Classify PixelWave Media expenses:
+""Video editing workshop"" → OPEX-Training
+""Production camera purchase"" → CAPEX-Equipment
+""Advanced editing course for employees"" →","""Advanced editing course for employees"" → **OPEX-Training**"
+20,Classify this PixelWave Media expense: Annual appreciation dinner for the creative team.,"An **Annual appreciation dinner for the creative team** is classified under **Meals & Entertainment: Employee Meals / Staff Appreciation**.
+
+### Tax & Accounting Details (US GAAP / IRS)
+
+* **Account Category:** Operating Expenses (OpEx) $\rightarrow$ Meals & Entertainment (or Employee Welfare / Staff Appreciation).
+* **IRS Deductibility:** **100% Tax-Deductible** (under US tax law, company-wide employee events or holiday/appreciation parties for staff are typically 100% deductible, unlike standard 50%-deductible business meals with clients).
+* **Key Requirement:** Keep the itemized receipt, note the business purpose, and list the attendees (creative team members).","Classify PixelWave Media expenses:
+""Creative team appreciation dinner"" → OPEX-Welfare
+""Advanced video editing course"" → OPEX-Training
+""Annual creative department celebration dinner"" →","""Annual creative department celebration dinner"" → **OPEX-Welfare**"
